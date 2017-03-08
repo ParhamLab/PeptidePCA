@@ -18,7 +18,7 @@ devtools::install_github("ParhamLab/PeptidePCA")
 Usage
 -----
 
-This is a small vignette to display what LAPP can do
+This is a small vignette to display what PeptidePCA can do
 
 ``` r
 library(PeptidePCA)
@@ -36,9 +36,11 @@ colnames(convmat.24)
 #> [19] "Proline"           "Serine"            "Threonine"        
 #> [22] "Tryptophan"        "Tyrosine"          "Valine"
 
-## read in ligand files (already done in this example)
-# HLA ligand sequences collected from IEDB 
-#ligands.4A= read.ligands("C:/Users/Alex/Documents/PeptidePCA.test")
+## convert in ligand files (already done in this example)
+# this is a folder that contains .txt files with one ligand per line and nothing else
+# ligands.4A= read.ligands("C:/Users/Alex/Documents/PeptidePCA.testdata")
+
+## load in the preconverted data for this example
 data(ligands.4A, package= "PeptidePCA")
 summary(ligands.4A)
 #>         Length Class  Mode     
