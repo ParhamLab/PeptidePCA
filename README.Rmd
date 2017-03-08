@@ -39,9 +39,11 @@ library(PeptidePCA)
 data(convmat.24, package= "PeptidePCA")
 colnames(convmat.24)
 
-## read in ligand files (already done in this example)
-# HLA ligand sequences collected from IEDB 
-#ligands.4A= read.ligands("C:/Users/Alex/Documents/PeptidePCA.test")
+## convert in ligand files (already done in this example)
+# this is a folder that contains .txt files with one ligand per line and nothing else
+# ligands.4A= read.ligands("C:/Users/Alex/Documents/PeptidePCA.testdata")
+
+## load in the preconverted data for this example
 data(ligands.4A, package= "PeptidePCA")
 summary(ligands.4A)
 
@@ -55,6 +57,6 @@ features.4A.pca= pep.pca(features.4A)
 colors= c( "#E69F00", "#0072B2", "#CC79A7", "#009E73")
 
 # plot PCA
-plot.pep.pca(features.4A.pca, type= "density", color= colors)
+pep.pca.plot(pca= features.4A.pca, type= "density", colors= colors)
 
 ```
