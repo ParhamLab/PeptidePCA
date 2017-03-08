@@ -29,7 +29,7 @@ devtools::install_github("ParhamLab/PeptidePCA")
 
 ## Usage
 
-This is a small vignette to display what LAPP can do
+This is a small vignette to display what PeptidePCA can do
 
 ```{r vignette, dev='png', fig.width=9, fig.height=6}
 library(PeptidePCA)
