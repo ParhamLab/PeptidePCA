@@ -1,6 +1,6 @@
 #' Plot LAPP PCA
 #'
-#' \code{plot.pep.pca()} takes in a modified PCA object returned by pep.pca() and plots it.
+#' \code{pep.pca.plot()} takes in a modified PCA object returned by pep.pca() and plots it.
 #' Uses ggplot2.
 #'
 #' @param pca modified PCA object returned by pep.pca(). Can take up to 8 different HLA alleles.
@@ -20,7 +20,7 @@
 #'
 #' @export
 
-plot.pep.pca = function(pca, dim1 = 1, dim2 = 2, type = "density",
+pep.pca.plot = function(pca, dim1 = 1, dim2 = 2, type = "density",
                         colors = c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")) {
 
   PC.labels = paste0("PC.", 1:ncol(pca$ind$coord))

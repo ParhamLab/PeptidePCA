@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# LAPP : Ligand Analysis with Physicochemical Properties
+# PeptidePCA 
 
 PeptidePCA contains a small suite of functions that can be used to recreate PCA figures from Hilton et al. (2017). 
 HLA peptide sequences can be transformed into new features using an amino acid conversion matrix and then plotted using PCA. 
@@ -46,7 +46,7 @@ data(ligands.4A, package= "PeptidePCA")
 summary(ligands.4A)
 
 # create features from example dataset
-features.4A= conv.features.list(ligands, convmat.24, 9)
+features.4A= conv.features.list(ligands.4A, convmat.24, 9)
 
 # perform PCA
 features.4A.pca= pep.pca(features.4A)
