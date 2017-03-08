@@ -1,0 +1,60 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# LAPP : Ligand Analysis with Physicochemical Properties
+
+PeptidePCA contains a small suite of functions that can be used to recreate PCA figures from Hilton et al. (2017). 
+HLA peptide sequences can be transformed into new features using an amino acid conversion matrix and then plotted using PCA. 
+The packages ggplot2 and FactoMineR are required.
+
+## Installation
+
+You can install PeptidePCA in R with the following command
+
+```{r install, eval=FALSE}
+library(devtools)
+devtools::install_github("ParhamLab/PeptidePCA")
+```
+
+## Usage
+
+This is a small vignette to display what LAPP can do
+
+```{r vignette, dev='png', fig.width=9, fig.height=6}
+library(PeptidePCA)
+
+## load in example datasets
+# conversion matrix using 4 physicochemical properties and amino acid identities
+data(convmat.24, package= "PeptidePCA")
+colnames(convmat.24)
+
+## read in ligand files (already done in this example)
+# HLA ligand sequences collected from IEDB 
+#ligands.4A= read.ligands("C:/Users/Alex/Documents/PeptidePCA.test")
+data(ligands.4A, package= "PeptidePCA")
+summary(ligands.4A)
+
+# create features from example dataset
+features.4A= conv.features.list(ligands, convmat.24, 9)
+
+# perform PCA
+features.4A.pca= pep.pca(features.4A)
+
+# colors for plotting, taken from http://jfly.iam.u-tokyo.ac.jp/color/
+colors= c( "#E69F00", "#0072B2", "#CC79A7", "#009E73")
+
+# plot PCA
+plot.pep.pca(features.4A.pca, type= "density", color= colors)
+
+```

@@ -1,0 +1,15 @@
+Package: PeptidePCA
+Title: PCA using physicochemical properties of HLA
+Version: 0.1
+Authors@R: c(
+	person("Han", "Alex", , "alexshan@stanford.edu", c("aut", "cre"))
+	)
+Description: PeptidePCA contains a small suite of functions that can be used to recreate PCA figures from Hilton et al. (2017). HLA peptide sequences can be transformed into new features using an amino acid conversion matrix and then plotted using PCA. The packages ggplot2 and FactoMineR are required.
+Depends:
+    R (>= 3.3.2)
+Imports:
+    ggplot2 (>= 2.2.1)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
