@@ -40,8 +40,9 @@ data(convmat.24, package= "PeptidePCA")
 colnames(convmat.24)
 
 ## convert in ligand files (already done in this example)
-# this is a folder that contains .txt files with one ligand per line and nothing else
-# ligands.4A= read.ligands("C:/Users/Alex/Documents/PeptidePCA.testdata")
+# "testdata" is a folder that contains .txt files representing one HLA each,
+# with one ligand per line and nothing else.
+# ligands.4A= read.ligands("C:/Users/Alex/Documents/testdata")
 
 ## load in the preconverted data for this example
 data(ligands.4A, package= "PeptidePCA")
